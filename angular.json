@@ -21,9 +21,9 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/assets/css/demo.css",
-              "src/assets/sass/app.scss",
-              "src/styles.css"
+              {"input": "src/assets/css/demo.css","lazy": true,"bundleName": "demo.css" },
+              {"input": "src/assets/sass/app.scss","lazy": true,"bundleName": "app.scss" },
+              {"input": "src/styles.css","lazy": true,"bundleName": "style.css" }
             ],
             "scripts": [
               "src/assets/vendor/pace/pace.min.js"
