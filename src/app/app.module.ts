@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./shared/shared.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import {BrowserModule} from '@angular/platform-browser';
 import { 
@@ -40,13 +39,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       SharedModule,
       HttpClientModule,
       NgbModule.forRoot(),
-      TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: createTranslateLoader,
-          deps: [HttpClient]
-        }
-      }),
       PerfectScrollbarModule
     ],
     providers: [

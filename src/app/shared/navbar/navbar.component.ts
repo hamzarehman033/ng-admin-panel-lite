@@ -1,6 +1,4 @@
 import { Component, Output, EventEmitter, OnInit, AfterViewInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-
 import { LayoutService } from '../services/layout.service';
 import { ConfigService } from '../services/config.service';
 
@@ -19,9 +17,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   public config: any = {};
 
-  constructor(public translate: TranslateService, private layoutService: LayoutService, private configService:ConfigService) {
-    const browserLang: string = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|es|pt|de/) ? browserLang : "en");
+  constructor(
+    private layoutService: LayoutService, private configService:ConfigService) {
 
   }
 
@@ -40,10 +37,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     }
   }
 
-
-  ChangeLanguage(language: string) {
-    this.translate.use(language);
-  }
 
   ToggleClass() {
     if (this.toggleClass === "ft-maximize") {

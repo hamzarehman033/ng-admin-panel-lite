@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } fr
 
 import { ROUTES } from './sidebar-routes.config';
 import { Router, ActivatedRoute } from "@angular/router";
-import { TranslateService } from '@ngx-translate/core';
 import { customAnimations } from "../animations/custom-animations";
 import { ConfigService } from '../services/config.service';
 
@@ -29,7 +28,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     private renderer: Renderer2,
     private router: Router,
     private route: ActivatedRoute,
-    public translate: TranslateService,
     private configService: ConfigService,
   ) {
     if (this.depth === undefined) {
