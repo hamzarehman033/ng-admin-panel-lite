@@ -113,13 +113,25 @@ __webpack_require__.r(__webpack_exports__);
  * import for `ngExpressEngine`.
  */
 
+
+// import * as compression from 'compression';
+
+// import * as compression from 'compression';
 // Express server
 const app = express__WEBPACK_IMPORTED_MODULE_1__();
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = Object(path__WEBPACK_IMPORTED_MODULE_2__["join"])(process.cwd(), 'dist/browser');
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap } = __webpack_require__(129);
-
+// app.use(compression({ filter: shouldCompress }))
+// function shouldCompress (req, res) {
+//   if (req.headers['x-no-compression']) {
+//     // don't compress responses with this request header
+//     return false
+//   }
+//   // fallback to standard filter function
+//   return compression.filter(req, res)
+// }
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
