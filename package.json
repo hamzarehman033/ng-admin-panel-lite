@@ -14,7 +14,7 @@
     "optimizecss": "gulp --gulpfile optimize-css.gulpfile.js",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run optimizecss && npm run compile:server ",
     "build:client-and-server-bundles": "ng build --prod --build-optimizer --vendor-chunk && ng run matngular:server:production --bundleDependencies all"
   },
   "private": true,
