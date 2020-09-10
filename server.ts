@@ -1,3 +1,4 @@
+
 /**
  * *** NOTE ON IMPORTING FROM ANGULAR AND NGUNIVERSAL IN THIS FILE ***
  *
@@ -16,10 +17,10 @@
  */
 
 import 'zone.js/dist/zone-node';
-
 import * as express from 'express';
+// import * as compression from 'compression';
 import {join} from 'path';
-
+// import * as compression from 'compression';
 // Express server
 const app = express();
 
@@ -29,6 +30,17 @@ const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap} = require('./dist/server/main');
 
+
+// app.use(compression({ filter: shouldCompress }))
+// function shouldCompress (req, res) {
+//   if (req.headers['x-no-compression']) {
+//     // don't compress responses with this request header
+//     return false
+//   }
+
+//   // fallback to standard filter function
+//   return compression.filter(req, res)
+// }
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
